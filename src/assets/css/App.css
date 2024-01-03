@@ -14,7 +14,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +23,23 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.plants {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.plant-card {
+  flex: 1 16%;
+  margin: 1%;
+}
+
+.plant-image img {
+  max-width: 100%;
+}
+
+.plant-info {
+  margin-top: auto;
 }
