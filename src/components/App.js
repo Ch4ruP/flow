@@ -1,5 +1,8 @@
-import './assets/css/App.css';
-import logo from './assets/images/flowicon.png';
+import React from 'react';
+import '../assets/css/App.css';
+import logo from '../assets/images/flowicon.png';
+import PlantSearchBar from './SearchPlants';
+import PlantCalendar from './PlantCalendar';
 
 // Plant Data to be rendered - eventually will be dependent on what is saved for a user
 const plantData = [
@@ -24,6 +27,14 @@ const plantData = [
 ]
 
 function App() {
+
+  /*const [formData, setFormData] = useState({
+    // Initialize your form data state
+    username: '',
+    password: '',
+    // Add other fields if needed
+  });*/
+
   return (
     <div className="App">
       <h1>Flow</h1>
@@ -34,22 +45,11 @@ function App() {
       {/* Each plant calendar component here, add plant button at the end */}
       {plantData.map(plant => <PlantCalendar plantObj={plant} key={plant.plantName} />)}
       </section>
+      <PlantSearchBar></PlantSearchBar>
     </div>
   );
 }
 
-function PlantCalendar(props){
-  return (
-  <div className="plant-card">
-    <div className="plant-image">
-      <img src={props.plantObj.calendarImg}  alt={props.plantObj.alt} />
-    </div>
-    <div className="plant-info">
-      <h2>{props.plantObj.plantName}</h2>
-      <p>{props.plantObj.daysTilWater}</p>
-    </div>
-  </div>
-  );
-}
+
 
 export default App;
